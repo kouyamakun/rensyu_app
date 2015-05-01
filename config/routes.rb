@@ -2,6 +2,7 @@ RensyuApp::Application.routes.draw do
   get "abc_pages/home"
   get "abc_pages/help"
   get "abc_pages/about"
+  get "abc_pages/contact"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
