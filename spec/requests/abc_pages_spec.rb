@@ -3,16 +3,22 @@ require 'spec_helper'
 describe"Rensyu pages"do
 
   describe "Home page" do
+
     it "shoud have the content'Rensyu App'" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
       visit'/abc_pages/home'
       expect(page).to have_content('Rensyu App')
     end
 
-    it "should have the title 'Home'" do
+    it "should have the base title" do
       visit '/abc_pages/home'
-      expect(page).to have_title("Ruby on Rails Tutorial Rensyu App | Home")
-   end
+      expect(page).to have_title("Ruby on Rails Tutorial Rensyu App")
+    end
+
+    it "should not have a custom page title" do
+      visit '/abc_pages/home'
+      expect(page).not_to have_title('| Home')
+    end
   end
 
   describe "Help page" do
