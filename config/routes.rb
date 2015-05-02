@@ -1,5 +1,7 @@
 RensyuApp::Application.routes.draw do
+  get "users/new"
   root  'abc_pages#home'
+  match '/signup',  to: 'users#new',            via: 'get'
   match '/help',    to: 'abc_pages#help',    via: 'get'
   match '/about',   to: 'abc_pages#about',   via: 'get'
   match '/contact', to: 'abc_pages#contact', via: 'get'
